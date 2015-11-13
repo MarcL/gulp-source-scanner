@@ -1,0 +1,34 @@
+{
+  "name": "gulp-source-scanner",
+  "version": "1.0.0",
+  "description": "A Gulp plugin which scans your source files and tries to detect files which should not be uploaded to source control e.g. TLS private keys, AWS credentials etc.",
+  "main": "gulp-source-scanner.js",
+  "dependencies": {
+    "gulp": "^3.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neilstuartcraig/gulp-source-scanner.git"
+  },
+  "keywords": [
+    "gulp",
+    "tls",
+    "cert",
+    "private",
+    "scanner",
+    "aws",
+    "keys",
+    "key",
+    "security"
+  ],
+  "author": "Neil Craig <neil.craig@thedotproduct.org>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/neilstuartcraig/gulp-source-scanner/issues"
+  },
+  "homepage": "https://github.com/neilstuartcraig/gulp-source-scanner#readme"
+}
