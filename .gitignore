@@ -1,5 +1,4 @@
 npm-debug.log
-scratchpad/
-out
-node_modules/
+node_modules
+test/out
 gulpfile.js

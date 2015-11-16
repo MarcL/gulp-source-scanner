@@ -23,6 +23,9 @@ This project aims to maintain the [semver](http://semver.org/) version numbering
 ##Changelog  
 See the [changelog](./changelog.md) file
 
+##Security  
+See the [security](./security.md) file
+
 ##Requirements  
 * Node runtime (I believe v0.12+ will work but haven't tested)
 * NPM
