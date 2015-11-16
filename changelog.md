@@ -1,5 +1,8 @@
 #gulp-source-scanner changelog
 
+#v1.0.2
+* Improve readme.md
+
 #v1.0.1
 * Add changelog
 * Add security.md

@@ -3,6 +3,10 @@
 ##Overview  
 `gulp-source-scanner` is a plugin for the [gulp](http://gulpjs.com/) task runner which tries (without making guarantees, due to the complexity of the task) to detect some critically important file types which are due to be uploaded to source control (e.g. github).
 
+###Why should I use this plugin?
+The aim is simple, prevent commonly found, sensitive file types from ending up in your source control repository and thus reduce the risk of leakage. 
+
+###Which types of files can be detected?
 Currently, `gulp-source-scanner` will, by default, try to find:  
 * SSL/TLS X.509 certificates (admittedly, not critical in most cases)
 * SSL/TLS private keys (RSA)
