@@ -1,7 +1,10 @@
 #gulp-source-scanner changelog
 
+#v1.1.1
+* Amending/fettling .travis.yml
+
 #v1.1.0
-* Add travis.org test config file 
+* Add travis.org test config file
 
 #v1.0.2
 * Improve readme.md
