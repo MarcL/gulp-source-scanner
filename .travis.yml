@@ -6,9 +6,10 @@ node_js:
   - "iojs-v2"
   - "iojs-v3"
   - "v4"
-  - "v5.0"
+  - "v5"
   - "iojs"
   - "node"
+  - "unstable"
 script:
   - npm test
 env:

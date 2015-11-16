@@ -1,5 +1,8 @@
 #gulp-source-scanner changelog
 
+#v1.1.6
+* Trying to fix .travis.yml WRT NVM versions
+
 #v1.1.5
 * Trying to fix .travis.yml WRT NVM versions
 
