@@ -4,11 +4,18 @@
   "description": "A Gulp plugin which scans your source files and tries to detect files which should not be uploaded to source control e.g. TLS private keys, AWS credentials etc.",
   "main": "gulp-source-scanner.js",
   "dependencies": {
-    "gulp": "^3.9.0"
+    "gulp": "^3.9.0",
+    "throug2": "2.x"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "coveralls": "^2.11.4",
+    "istanbul": "^0.3.20",
+    "mocha": "^2.3.3",
+    "mocha-lcov-reporter": "^1.0.0",
+    "should": "^7.1.0"
+  },
   "scripts": {
-    "test": "npm test"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",

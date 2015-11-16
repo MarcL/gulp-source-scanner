@@ -1,0 +1,6 @@
+This would be someones AWS creds - they're not real
+
+Access Key ID:
+AKIAJKZESORUJ453WZCA
+Secret Access Key:
+2ojV96gEF9GDQOyDvFwjI+aGXG5ypsZ4zsL/w/VQ

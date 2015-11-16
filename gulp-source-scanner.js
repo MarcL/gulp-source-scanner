@@ -1,23 +1,3 @@
-/*
-
-TODO
-TEST but should be done * account for comments in gitignore
-* check why some files are being passed through when not matching - prob ignore
-  * think it's a lack of conditions for if match at the end - comments in the place to look at
-* cache whatever we can so it doesnt get repeated for every file
-  * ignoreFile content/resulting paths
-  *
-* maybe tag files PASS/FAIL so that the .pipe(dest()) can output to 2 diff locations?
-DONE * allow ignoring files over a certain size - default ~5MB?
-DONE * logging
-DONE * observe .gitignore or another file(s) as defined
-* better opts defaulting - for at least all root/0th dimension props
-DONE * opt: fail on finding first file
-DONE * opt: scan type(s) (shoud allow >1 type at once)
-DONE * allow matching of only certain types of files against types
-*/
-
-
 // Deps
 // Core
 var path=require("path");
@@ -33,10 +13,9 @@ var pluginName=require(path.join(__dirname, "/package.json")).name;
 var defaultOpts=
 {
   logLevel:"warn", // "error" || "warn" || "info" || "debug"
-  beepOnDetection:true, // Boolean: beep on detecting a file which matches the defined scanTypes
   ignoreFilesListLocation:".gitignore", // location of a file which lists files which won't be committed to SC, set to false to disable
   ignoreFilesLargerThanMB:9, // Don't even scan files > this size in MB
-  failOnDetection:true, // Fail on detecting a file which matches the defined scanTypes
+  failOnDetection:false, // Fail on detecting a file which matches the defined scanTypes
   removeFilesFromOutput:"matches", // "matches" || "non-matches" || "none"
   scanTypes:
   {
@@ -88,7 +67,7 @@ var scanTypeToRegexMap=
   RSAPrivate:/-----BEGIN RSA PRIVATE KEY-----/,
   AWSAccessToken:/(\s|^)[A-Z0-9]{20}(?![A-Z0-9])(\s|$)/,
 
-  // Minor issue with this in that it matches RSA private keys too
+  // Issue with this in that it matches RSA private keys too
   AWSSecretToken:/(\s|^)[A-Za-z0-9/+=]{40}(\s|$)/
 };
 
@@ -101,6 +80,7 @@ function scan(opts)
     opts=defaultOpts;
   }
 
+
   if(typeof(opts.logLevel)==="string")
   {
     logLevel=opts.logLevel;
@@ -108,30 +88,9 @@ function scan(opts)
 
   var restoreStream=through2.obj();
 
-  return through2.obj(function(file, encoding, callback)
+  return through2.obj(function scanFn(file, encoding, callback)
   {
     var err=[];
-
-
-
-// TMP
-// if(file.stat.isDirectory())
-// {
-//   console.log("DIR: %s", file.path);
-//   return callback(null, file);
-// }
-// else
-// {
-//   console.log("NOT DIR %s %d", file.path, file.stat.size);
-// }
-//
-// if(file.stat.size===0)
-// {
-//   console.log("ARSE!!!!");
-// }
-//
-// console.log("FILE: %s", file.path);
-
 
     // Detect null file types, unlikely this'd be needed here but included for completeness
     if(file.isNull())
@@ -162,8 +121,6 @@ function scan(opts)
           // perhaps should use path.resolve here? would allow people to use abs urls i guess
           var ignoreFile=path.join(process.cwd(), "/", opts.ignoreFilesListLocation);
 
-
-// TMP: this is not the problem with the read error
           ignoreFileContent=fs.readFileSync(ignoreFile);
         }
 
@@ -227,12 +184,6 @@ function scan(opts)
                   {
                     log("error", "File "+file.path+" looks like it contains "+i+" format data");
                     err.push("File "+file.path+" looks like it contains "+i+" format data");
-
-// remove this?
-if(opts.beepOnDetection===true)
-{
-  gu.beep();
-}
                   }
                   else
                   {
