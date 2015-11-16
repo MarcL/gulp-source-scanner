@@ -1,5 +1,9 @@
 #gulp-source-scanner changelog
 
+#v1.1.3
+* Fix missing dependency on `gulp-util`
+* Fix .travis.yml WRT node versions
+
 #v1.1.2
 * Amend typo in package.json for `through2`
 
