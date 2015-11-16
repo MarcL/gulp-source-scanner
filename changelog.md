@@ -1,5 +1,8 @@
 #gulp-source-scanner changelog
 
+#v1.2.0
+* Add `nsp check` to .travis.yml
+
 #v1.1.6
 * Trying to fix .travis.yml WRT NVM versions
 

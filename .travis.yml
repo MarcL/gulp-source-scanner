@@ -10,6 +10,9 @@ node_js:
   - "iojs"
   - "node"
   - "unstable"
+before_script:
+  - npm install nsp -g
+  - nsp check
 script:
   - npm test
 env:
