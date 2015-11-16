@@ -1,5 +1,8 @@
 #gulp-source-scanner changelog
 
+#v1.1.2
+* Amend typo in package.json for `through2`
+
 #v1.1.1
 * Amending/fettling .travis.yml
 
