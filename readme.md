@@ -4,7 +4,7 @@
 `gulp-source-scanner` is a plugin for the [gulp](http://gulpjs.com/) task runner which tries (without making guarantees, due to the complexity of the task) to detect some critically important file types which are due to be uploaded to source control (e.g. github).
 
 ###Why should I use this plugin?
-The aim is simple, prevent commonly found, sensitive file types from ending up in your source control repository and thus reduce the risk of leakage. 
+The aim is simple, prevent commonly found, sensitive file types from ending up in your source control repository and thus reduce the risk of leakage.
 
 ###Which types of files can be detected?
 Currently, `gulp-source-scanner` will, by default, try to find:  
@@ -152,7 +152,7 @@ There are some very, very basic built-in tests which use [Mocha](https://mochajs
 npm test
 ```
 
-All test *should* pass - we use [Travis CI](https://travis-ci.org/neilstuartcraig/gulp-runner-tdp) to verify this with each push to the [GitHub master branch](https://github.com/neilstuartcraig/gulp-runner-tdp).
+All test *should* pass - we use [Travis CI](https://travis-ci.org/neilstuartcraig/gulp-source-scanner) to verify this with each push to the [GitHub master branch](https://github.com/neilstuartcraig/gulp-source-scanner).
 
 ##Bugs  
 If you find a bug, please let me know via an issue.
@@ -161,4 +161,4 @@ If you find a bug, please let me know via an issue.
 If you have ideas for improvements or want to contribute a bug fix, please create an issue first so we can discuss and make sure we don't duplicate efforts and that the idea is in the right direction for the plugin.
 
 ##License  
-TBC - private, all rights restricted, until otherwise stated
+[MIT](https://opensource.org/licenses/MIT)

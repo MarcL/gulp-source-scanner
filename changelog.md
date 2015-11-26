@@ -1,5 +1,9 @@
 #gulp-source-scanner changelog
 
+#v1.2.1
+* Updated license to be MIT
+* Fixed link in readme (travis)
+
 #v1.2.0
 * Add `nsp check` to .travis.yml
 
