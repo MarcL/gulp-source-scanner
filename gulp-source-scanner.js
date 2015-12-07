@@ -143,10 +143,13 @@ function scan(opts)
               if(new RegExp(absoluteIgnorePath+"/.+").test(file.path) || absoluteIgnorePath===file.path)
               {
                 ignore=true;
+                break;
               }
-
-              log("debug", (ignore?"I":"Not i")+"gnoring "+file.path);
             }
+          }
+
+          if (ignore) {
+            log('debug', 'Ignoring file : ' + file.path);
           }
         }
         else
