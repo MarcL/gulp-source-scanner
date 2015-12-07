@@ -160,7 +160,8 @@ function scan(opts)
 
       if(ignore===false)
       {
-        if(opts.ignoreFilesLargerThanMB>(file.stat.size/1024) || opts.ignoreFilesLargerThanMB===0)
+        var fileSizeInMB = file.stat.size / (1024 * 1024);
+        if((fileSizeInMB < opts.ignoreFilesLargerThanMB) || (opts.ignoreFilesLargerThanMB=== 0))
         {
           // Execute all defined scanTypes in opts
           if("scanTypes" in opts)
