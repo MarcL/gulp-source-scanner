@@ -143,10 +143,13 @@ function scan(opts)
               if(new RegExp(absoluteIgnorePath+"/.+").test(file.path) || absoluteIgnorePath===file.path)
               {
                 ignore=true;
+                break;
               }
-
-              log("debug", (ignore?"I":"Not i")+"gnoring "+file.path);
             }
+          }
+
+          if (ignore) {
+            log('debug', 'Ignoring file : ' + file.path);
           }
         }
         else
@@ -157,7 +160,8 @@ function scan(opts)
 
       if(ignore===false)
       {
-        if(opts.ignoreFilesLargerThanMB>(file.stat.size/1024) || opts.ignoreFilesLargerThanMB===0)
+        var fileSizeInMB = file.stat.size / (1024 * 1024);
+        if((fileSizeInMB < opts.ignoreFilesLargerThanMB) || (opts.ignoreFilesLargerThanMB=== 0))
         {
           // Execute all defined scanTypes in opts
           if("scanTypes" in opts)
