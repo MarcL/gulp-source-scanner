@@ -1,5 +1,9 @@
 #gulp-source-scanner changelog
 
+#v1.3.0
+* Add early out on .gitignore filtering (@MarcL)
+* Fix bug in filesize limiting (@MarcL)
+
 #v1.2.1
 * Updated license to be MIT
 * Fixed link in readme (travis)
